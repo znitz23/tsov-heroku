@@ -9,7 +9,6 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const PORT = process.env.PORT || 3000;
 const { getUserByUsername, createUser, getUser } = require("./db/users");
 const { requireUser } = require("./utilities");
-pool.connect();
 const morgan = require("morgan");
 const {
   getSessionsByUsername,
