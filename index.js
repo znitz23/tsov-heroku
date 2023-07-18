@@ -68,7 +68,7 @@ app.post("/users/register", async (req, res, next) => {
       });
     }
 
-    if (password.length < 5) {
+    if (password.length < 6) {
       return res.status(400).json({
         error: "PasswordTooShortError",
         message: "Password should be at least 5 characters long.",
