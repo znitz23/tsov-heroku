@@ -188,15 +188,6 @@ app.delete("/sessions/:id/delete", async (req, res, next) => {
   }
 });
 
-app.use((req, res, next) => {
-  try {
-    res.status(404).send("Sorry, can't find that! :/");
-  } catch (error) {
-    console.errror(error);
-    throw error;
-  }
-});
-
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
