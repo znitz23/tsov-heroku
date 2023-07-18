@@ -101,6 +101,7 @@ app.post("/users/register", async (req, res, next) => {
     });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
@@ -136,6 +137,7 @@ app.post("/users/login", async (req, res, next) => {
     });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
