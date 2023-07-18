@@ -62,18 +62,16 @@ app.post("/users/register", async (req, res, next) => {
   try {
     const _user = await getUserByUsername(username);
     if (_user) {
-      next({
-        error: "Error",
-        name: "UserExistsError",
+      return res.status(400).json({
+        error: "UserExistsError",
         message: `User ${username} is already taken.`,
       });
     }
 
     if (password.length < 5) {
-      next({
-        error: "Error",
-        name: "Password Too Short!",
-        message: "Password Too Short!",
+      return res.status(400).json({
+        error: "PasswordTooShortError",
+        message: "Password should be at least 5 characters long.",
       });
     }
 
@@ -93,9 +91,9 @@ app.post("/users/register", async (req, res, next) => {
       }
     );
 
-    res.send({
+    res.status(200).json({
       username: newUser.username,
-      message: "thank you for registering",
+      message: "Thank you for registering.",
       token,
     });
   } catch (error) {
@@ -109,9 +107,8 @@ app.post("/users/register", async (req, res, next) => {
 app.post("/users/login", async (req, res, next) => {
   const { username, password } = req.body;
   if (!username || !password) {
-    next({
-      error: "Error",
-      name: "MissingCredentialsError",
+    return res.status(400).json({
+      error: "MissingCredentialsError",
       message: "Please supply both a username and password",
     });
   }
@@ -121,17 +118,16 @@ app.post("/users/login", async (req, res, next) => {
     const token = jwt.sign(
       {
         username: user.username,
-        password: user.password,
       },
       process.env.JWT_SECRET,
       {
-        expiresIn: "2w",
+        expiresIn: "1y",
       }
     );
 
-    res.send({
+    res.status(200).json({
       username: user.username,
-      message: "you're logged in!",
+      message: "You're logged in!",
       token,
     });
   } catch (error) {
