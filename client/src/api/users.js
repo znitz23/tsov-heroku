@@ -1,6 +1,6 @@
 export const fetchUser = async (token) => {
   try {
-    const response = await fetch(`http://localhost:3000/users/me`, {
+    const response = await fetch(`/users/me`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,

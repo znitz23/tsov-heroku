@@ -1,6 +1,6 @@
 export const fetchSessions = async (token) => {
   try {
-    const response = await fetch(`http://localhost:3000/sessions/all`, {
+    const response = await fetch(`/sessions/all`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -16,15 +16,12 @@ export const fetchSessions = async (token) => {
 
 export const fetchUserSessions = async (username, token) => {
   try {
-    const response = await fetch(
-      `http://localhost:3000/sessions/all/${username}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(`/sessions/all/${username}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const result = await response.json();
     return result;
   } catch (error) {
@@ -46,7 +43,7 @@ export const createNewSession = async (
   token
 ) => {
   try {
-    const response = await fetch(`http://localhost:3000/sessions/create`, {
+    const response = await fetch(`/sessions/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,16 +71,13 @@ export const createNewSession = async (
 
 export const deleteSession = async (sessionId, token) => {
   try {
-    const response = await fetch(
-      `http://localhost:3000/sessions/${sessionId}/delete`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(`/sessions/${sessionId}/delete`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const result = await response.json();
   } catch (error) {
     console.error(error);

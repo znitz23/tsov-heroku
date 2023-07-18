@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db/db");
+const path = require("path");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
+const PORT = process.env.PORT || 3000;
 const { getUserByUsername, createUser, getUser } = require("./db/users");
 const { requireUser } = require("./utilities");
 pool.connect();
@@ -18,6 +20,10 @@ const {
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
 
 app.use(async (req, res, next) => {
   const prefix = "Bearer ";
@@ -191,6 +197,10 @@ app.use((req, res, next) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
 });
