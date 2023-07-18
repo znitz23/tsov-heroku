@@ -4,7 +4,7 @@ import Navbar from "./components/NavBar.js";
 import HomePage from "./components/HomePage.js";
 import Statistics from "./components/Statistics.js";
 import Results from "./components/Results.js";
-import { fetchSessions, fetchUserSessions } from "./api/sessions.js";
+import { fetchUserSessions } from "./api/sessions.js";
 import { fetchUser } from "./api/users.js";
 import { Container } from "./components/styled/Container.styled.js";
 

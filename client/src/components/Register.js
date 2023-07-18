@@ -6,11 +6,17 @@ import { CredentialsStyled } from "./styled/Home.styled.js";
 const Register = ({ setToken, setIsLoggedIn, setUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmedPassword, setConfirmedPassword] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!username || !password) {
-      alert("Must enter a username and password.");
+    if (
+      !username ||
+      !password ||
+      !confirmedPassword ||
+      password != confirmedPassword
+    ) {
+      alert("Must enter a username and matching passwords.");
     } else {
       const data = await authenticateNewUser({
         username: username,
@@ -43,6 +49,11 @@ const Register = ({ setToken, setIsLoggedIn, setUser }) => {
             placeholder="Password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+          ></input>
+          <input
+            placeholder="Confirm Password"
+            value={confirmedPassword}
+            onChange={(event) => setConfirmedPassword(event.target.value)}
           ></input>
           <button type="submit">Register</button>
         </form>
