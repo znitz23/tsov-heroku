@@ -28,12 +28,20 @@ function App() {
 
   useEffect(() => {
     const getInitialSessions = async () => {
+      const fetchedSessions = await fetchUserSessions(user.username, token);
+      setSessions(fetchedSessions);
+    };
+    getInitialSessions();
+  }, []);
+
+  useEffect(() => {
+    const getNewSessions = async () => {
       if (token) {
         const fetchedSessions = await fetchUserSessions(user.username, token);
         setSessions(fetchedSessions);
       }
     };
-    getInitialSessions();
+    getNewSessions();
   }, [addedSession]);
 
   return (

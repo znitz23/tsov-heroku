@@ -12,6 +12,7 @@ const Results = ({
   setSessions,
   token,
 }) => {
+  console.log("***", sessions);
   const userSessions = sessions.filter(
     (session) => session.username === user.username
   );
