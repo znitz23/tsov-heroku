@@ -28,32 +28,34 @@ function App() {
 
   useEffect(() => {
     const getInitialSessions = async () => {
-      const fetchedSessions = await fetchUserSessions(user.username, token);
-      setSessions(fetchedSessions);
+      if (user.username) {
+        const fetchedSessions = await fetchUserSessions(user.username, token);
+        setSessions(fetchedSessions);
+      }
     };
     getInitialSessions();
-  }, []);
+  }, [user.username, token]);
 
   useEffect(() => {
     const getNewSessions = async () => {
-      if (token) {
+      if (token && user.username) {
         const fetchedSessions = await fetchUserSessions(user.username, token);
         setSessions(fetchedSessions);
       }
     };
     getNewSessions();
-  }, [addedSession]);
+  }, [addedSession, token, user.username]);
 
   return (
     <>
+      <Navbar
+        token={token}
+        setToken={setToken}
+        setIsLoggedIn={setIsLoggedIn}
+        setUser={setUser}
+        isLoggedIn={isLoggedIn}
+      />
       <Container>
-        <Navbar
-          token={token}
-          setToken={setToken}
-          setIsLoggedIn={setIsLoggedIn}
-          setUser={setUser}
-          isLoggedIn={isLoggedIn}
-        />
         <Routes>
           <Route
             path="/"
@@ -64,6 +66,8 @@ function App() {
                 setIsLoggedIn={setIsLoggedIn}
                 setUser={setUser}
                 isLoggedIn={isLoggedIn}
+                sessions={sessions}
+                user={user}
               />
             }
           />
@@ -79,10 +83,6 @@ function App() {
                 setAddedSession={setAddedSession}
               />
             }
-          />
-          <Route
-            path="/statistics"
-            element={<Statistics sessions={sessions} user={user} />}
           />
         </Routes>
       </Container>

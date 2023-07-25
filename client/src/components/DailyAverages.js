@@ -46,7 +46,7 @@ const DailyAverages = ({ sessions, user }) => {
                   <tr key={day}>
                     <td>{day}</td>
                     <td>${new Intl.NumberFormat().format(sum)}</td>
-                    <td>${Math.floor(hourly)}</td>
+                    <td>${hourly ? Math.floor(hourly) : 0}</td>
                   </tr>
                 );
               })}

@@ -141,12 +141,14 @@ app.post("/users/login", async (req, res, next) => {
 // get all sessions from user
 
 app.get("/sessions/all/:username", async (req, res, next) => {
+  console.log("%%%%", req.params);
   const { username } = req.params;
   try {
     const sessions = await getSessionsByUsername(username);
     res.send(sessions);
   } catch (error) {
-    next(error);
+    console.error(error);
+    res.status(404).json({ error: "Internal Server Error" });
   }
 });
 

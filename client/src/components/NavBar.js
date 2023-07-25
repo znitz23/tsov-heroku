@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Nav, StyledNavBar } from "./styled/NavBar.styled";
-import logo from "../assets/logo1.png";
+import logo from "../assets/3-streets-logo_adobe_express.svg";
 
 const Navbar = ({ token, setToken, setUser, setIsLoggedIn, isLoggedIn }) => {
   const navigate = useNavigate();
@@ -18,9 +18,6 @@ const Navbar = ({ token, setToken, setUser, setIsLoggedIn, isLoggedIn }) => {
                 </NavLink>
                 <NavLink to="/results" className="navLink">
                   Results
-                </NavLink>
-                <NavLink to="/statistics" className="navLink">
-                  Statistics
                 </NavLink>
                 <button
                   onClick={() => {

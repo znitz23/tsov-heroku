@@ -1,19 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 90%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
+  padding-top: 65px;
 
   table {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     display: flex;
     flex-flow: column nowrap;
     background-color: white;
-    width: 100%;
+    width: 85%;
     margin: 0 auto;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #dadada;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 3px 3px 12px 2px gray;
     margin-bottom: 40px;
   }
 

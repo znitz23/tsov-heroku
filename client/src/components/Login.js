@@ -3,7 +3,7 @@ import { authenticateUser } from "../api/authenitcate.js";
 import { fetchUser } from "../api/users.js";
 import { CredentialsStyled } from "./styled/Home.styled.js";
 
-const Login = ({ setToken, setIsLoggedIn, setUser }) => {
+const Login = ({ setToken, setIsLoggedIn, setUser, setShowLogIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,8 +31,7 @@ const Login = ({ setToken, setIsLoggedIn, setUser }) => {
 
   return (
     <>
-      <CredentialsStyled>
-        <h2>Log In</h2>
+      <section>
         <form onSubmit={handleSubmit}>
           <input
             placeholder="Username"
@@ -41,12 +40,20 @@ const Login = ({ setToken, setIsLoggedIn, setUser }) => {
           ></input>
           <input
             placeholder="Password"
+            type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           ></input>
           <button type="submit">Login</button>
         </form>
-      </CredentialsStyled>
+        <div>
+          <h1>Welcome back!</h1>
+          <h4> Please Log In</h4>
+          <button onClick={() => setShowLogIn(false)} className="close">
+            X
+          </button>
+        </div>
+      </section>
     </>
   );
 };

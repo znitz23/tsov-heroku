@@ -79,6 +79,7 @@ export const deleteSession = async (sessionId, token) => {
       },
     });
     const result = await response.json();
+    return result;
   } catch (error) {
     console.error(error);
   }

@@ -23,8 +23,9 @@ export const authenticateNewUser = async ({
       return { message };
     }
     return;
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error("Error while authenticating new user:", error);
+    throw error;
   }
 };
 
@@ -48,7 +49,8 @@ export const authenticateUser = async ({ username, password }) => {
       return { message: "no token" };
     }
     return;
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error("Error while authenticating user:", error);
+    throw error;
   }
 };

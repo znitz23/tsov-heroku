@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { createNewSession } from "../api/sessions";
 
-const CreateSession = ({ user, addedSession, setAddedSession, token }) => {
+const CreateSession = ({
+  user,
+  addedSession,
+  setAddedSession,
+  token,
+  setShowForm,
+}) => {
   const [date, setDate] = useState("");
   const [game, setGame] = useState("");
   const [day, setDay] = useState("");
@@ -34,12 +40,21 @@ const CreateSession = ({ user, addedSession, setAddedSession, token }) => {
     setCash_out("");
     setNotes("");
     setAddedSession(!addedSession);
+    setShowForm(false);
     return newSession;
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="session-form" onSubmit={handleSubmit}>
+        <button
+          className="close-form"
+          onClick={() => {
+            setShowForm(false);
+          }}
+        >
+          X
+        </button>
         <h3 className="submission-form-title">Add a session</h3>
         <input
           type="date"

@@ -36,7 +36,7 @@ const StatsDashboard = ({ sessions, user }) => {
         </StatPaneStyled>
         <StatPaneStyled>
           <h3>Avg. Session(hrs)</h3>
-          <h4>{Math.floor(data.avgLength)}</h4>
+          <h4>{Math.floor(data.avgLength * 10) / 10}</h4>
         </StatPaneStyled>
         <StatPaneStyled>
           <h3>Hourly</h3>

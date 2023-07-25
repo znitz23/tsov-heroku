@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
 export const StyledNavBar = styled.section`
+  width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  margin-top: -55px;
+  margin-top: -10px;
+  margin-left: -10px;
+  padding-top: 10px;
+  box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.49);
 
   img {
-    max-width: 500px;
+    max-width: 7%;
+    padding: 10px 0 10px 40px;
   }
 
   div {
@@ -33,33 +39,20 @@ export const StyledNavBar = styled.section`
 export const Nav = styled.nav`
   float: right;
   display: flex;
-  :hover {
-    transform: scale(1.15);
-    text-shadow: #304d80 1px 0 7px;
-  }
-  .toggle-button {
-    position: absolute;
-    top: 6rem;
-    right: 2rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-  }
-
-  .bar {
-    height: 3px;
-    width: 100%;
-    background-color: black;
-    border-radius: 10px;
-  }
+  align-items: center;
+  padding-right: 40px;
 
   .navLink {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 30px;
     text-decoration: none;
+    color: black;
+  }
+
+  a.navLink.active {
+    color: #50a060;
+    transition: all 0.3s;
   }
 
   button {
@@ -74,6 +67,7 @@ export const Nav = styled.nav`
     font-size: large;
     margin-right: 20px;
     margin-left: 20px;
+    cursor: pointer;
     :hover {
       transform: scale(1.15);
       text-shadow: #304d80 1px 0 7px;

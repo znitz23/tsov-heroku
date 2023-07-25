@@ -4,8 +4,17 @@ import Register from "./Register";
 import Login from "./Login";
 import { CredentialsStyled, WelcomeStyled } from "./styled/Home.styled";
 import { Container } from "./styled/Container.styled";
+import Statistics from "./Statistics";
 
-const HomePage = ({ token, setToken, setUser, setIsLoggedIn, isLoggedIn }) => {
+const HomePage = ({
+  token,
+  setToken,
+  setUser,
+  setIsLoggedIn,
+  isLoggedIn,
+  sessions,
+  user,
+}) => {
   const [showLogIn, setShowLogIn] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   return (
@@ -29,37 +38,26 @@ const HomePage = ({ token, setToken, setUser, setIsLoggedIn, isLoggedIn }) => {
 
           {showRegister ? (
             <CredentialsStyled>
-              <section>
-                <button
-                  onClick={() => setShowRegister(false)}
-                  className="close"
-                >
-                  Close
-                </button>
-                <Register
-                  token={token}
-                  setToken={setToken}
-                  setIsLoggedIn={setIsLoggedIn}
-                  setUser={setUser}
-                />
-              </section>
+              <Register
+                setShowRegister={setShowRegister}
+                token={token}
+                setToken={setToken}
+                setIsLoggedIn={setIsLoggedIn}
+                setUser={setUser}
+              />
             </CredentialsStyled>
           ) : (
             <></>
           )}
           {showLogIn ? (
             <CredentialsStyled>
-              <button onClick={() => setShowLogIn(false)} className="close">
-                Close
-              </button>
-              <section>
-                <Login
-                  token={token}
-                  setToken={setToken}
-                  setIsLoggedIn={setIsLoggedIn}
-                  setUser={setUser}
-                />
-              </section>
+              <Login
+                setShowLogIn={setShowLogIn}
+                token={token}
+                setToken={setToken}
+                setIsLoggedIn={setIsLoggedIn}
+                setUser={setUser}
+              />
             </CredentialsStyled>
           ) : (
             <></>
@@ -68,8 +66,9 @@ const HomePage = ({ token, setToken, setUser, setIsLoggedIn, isLoggedIn }) => {
       ) : (
         <Container>
           <WelcomeStyled>
-            <h1>Welcome back to 3 Streets of Value.</h1>
+            <h1>Welcome back to 3 Streets of Value</h1>
           </WelcomeStyled>
+          <Statistics sessions={sessions} user={user} />
         </Container>
       )}
     </>

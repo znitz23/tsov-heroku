@@ -12,7 +12,7 @@ const Results = ({
   setSessions,
   token,
 }) => {
-  console.log("***", sessions);
+  const [showForm, setShowForm] = useState(false);
   const userSessions = sessions.filter(
     (session) => session.username === user.username
   );
@@ -40,12 +40,24 @@ const Results = ({
     <>
       <Container>
         <StyledResults>
-          <CreateSession
-            user={user}
-            addedSession={addedSession}
-            setAddedSession={setAddedSession}
-            token={token}
-          />
+          {showForm ? (
+            <CreateSession
+              user={user}
+              addedSession={addedSession}
+              setAddedSession={setAddedSession}
+              token={token}
+              setShowForm={setShowForm}
+            />
+          ) : (
+            <button
+              className="toggle-form"
+              onClick={() => {
+                setShowForm(true);
+              }}
+            >
+              Enter a session
+            </button>
+          )}
           <section>
             <table>
               <thead>
