@@ -25,7 +25,6 @@ export const CredentialsStyled = styled.div`
     width: 100%;
     height: 100%;
     color: white;
-    /* text-align: center; */
     h1 {
       font-size: 35px;
       padding-top: 25px;
@@ -104,5 +103,9 @@ export const WelcomeStyled = styled.div`
     color: blue;
     text-shadow: 5em;
     cursor: pointer;
+  }
+
+  .user-welcome {
+    font-size: 28px;
   }
 `;
