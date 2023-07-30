@@ -18,13 +18,13 @@ export const CredentialsStyled = styled.div`
     background: rgba(0, 0, 0, 0);
     cursor: pointer;
   }
-  div {
+  .welcome-message {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+
     width: 100%;
     height: 100%;
-    color: white;
+
     h1 {
       font-size: 35px;
       padding-top: 25px;
@@ -80,6 +80,17 @@ export const CredentialsStyled = styled.div`
     align-items: center;
     text-align: center;
     box-shadow: 0px 0px 10px 2px #64d993;
+    color: white;
+  }
+
+  @media (max-width: 765px) {
+    section {
+      width: 95%;
+      flex-direction: column-reverse;
+    }
+    form {
+      border-radius: 10px 10px 10px 10px;
+    }
   }
 `;
 
@@ -89,10 +100,7 @@ export const WelcomeStyled = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 3em;
-  h1 {
-    font-size: 2em;
-    text-align: center;
-  }
+  text-align: center;
 
   span {
     font-size: 1.5em;

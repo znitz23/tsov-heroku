@@ -110,6 +110,7 @@ export const StyledResults = styled.div`
       font-size: 10px;
     }
     button {
+      text-align: center;
       width: 4em;
       height: 2em;
       font-size: 1em;
