@@ -66,9 +66,7 @@ const HomePage = ({
       ) : (
         <Container>
           <WelcomeStyled>
-            <h1 className="user-welcome">
-              Welcome back to 3 Streets of Value, {user.username}
-            </h1>
+            <h1>Welcome back to 3 Streets of Value, {user.username}</h1>
           </WelcomeStyled>
           <Statistics sessions={sessions} user={user} />
         </Container>

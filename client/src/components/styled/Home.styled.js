@@ -87,12 +87,16 @@ export const WelcomeStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 0 3em;
   h1 {
-    font-size: 50px;
+    font-size: 2em;
+    text-align: center;
   }
 
   span {
-    font-size: 25px;
+    font-size: 1.5em;
+    text-align: center;
   }
 
   button {

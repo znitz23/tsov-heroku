@@ -4,12 +4,14 @@ export const StyledResults = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   .toggle-form {
-    border-radius: 20px;
-    width: 200px;
-    height: 40px;
+    border-radius: 2em;
+    width: 20em;
+    height: 4em;
     border: none;
+    margin-top: 2em;
     background-color: #50a060;
     color: #fff;
     box-shadow: 3px 3px 12px 2px gray;
@@ -19,18 +21,17 @@ export const StyledResults = styled.div`
   }
 
   .session-form {
-    position: fixed;
     display: flex;
     flex-direction: column;
-    width: 27%;
-    height: auto;
-    margin-top: 30px;
-    border-radius: 10px;
+    width: 90%;
+    margin-top: 1em;
+    border-radius: 1em;
     background-image: linear-gradient(to bottom right, #defce6, #b0cfb8);
     display: flex;
     align-items: center;
     text-align: center;
     box-shadow: 3px 3px 12px 2px gray;
+
     .submit-session {
       background-color: #50a060;
       margin: 8px 0 15px 0;
@@ -38,14 +39,11 @@ export const StyledResults = styled.div`
     }
   }
   .close-form {
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    max-width: 25px;
+    margin-left: 14em;
     border-radius: 0%;
     border: none;
     color: rgba(0, 0, 0, 1);
-    font-size: 20px;
+    font-size: 2em;
     font-weight: 600;
     background: rgba(0, 0, 0, 0);
     box-shadow: none;
@@ -66,8 +64,10 @@ export const StyledResults = styled.div`
     background-color: #fff;
   }
 
-  h3 {
-    font-size: 28px;
+  .submission-form-title {
+    margin-top: 0px;
+    height: 1em;
+    font-size: 2.5em;
   }
 
   section {
@@ -92,5 +92,21 @@ export const StyledResults = styled.div`
     font-size: medium;
     cursor: pointer;
     margin-bottom: 15px;
+  }
+
+  @media (max-width: 765px) {
+    table {
+      width: 96%;
+    }
+    td,
+    th {
+      font-size: 10px;
+    }
+    button {
+      width: 4em;
+      height: 2em;
+      font-size: 1em;
+      margin-bottom: 0;
+    }
   }
 `;

@@ -58,7 +58,7 @@ const Results = ({
               Enter a session
             </button>
           )}
-          <section>
+          <section className="mobile-table">
             <table>
               <thead>
                 <tr>

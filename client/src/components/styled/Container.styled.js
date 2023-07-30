@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-  margin: 0 auto;
   padding-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   table {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
