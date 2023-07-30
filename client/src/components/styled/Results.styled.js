@@ -95,6 +95,13 @@ export const StyledResults = styled.div`
   }
 
   @media (max-width: 765px) {
+    input,
+    select {
+      font-size: 18px;
+    }
+    .close-form {
+      margin-left: 8em;
+    }
     table {
       width: 96%;
     }

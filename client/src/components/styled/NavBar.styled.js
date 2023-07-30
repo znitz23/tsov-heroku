@@ -80,6 +80,7 @@ export const Nav = styled.nav`
       height: 1.4em;
       font-size: 0.9em;
       margin-left: 0.5em;
+      margin-right: 1.5em;
     }
   }
 `;
