@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -59,7 +59,6 @@ export const Nav = styled.nav`
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
     font-weight: 700;
     font-size: large;
-    margin-right: 3em;
     margin-left: 2em;
     cursor: pointer;
     :hover {
@@ -70,6 +69,7 @@ export const Nav = styled.nav`
 
   @media (max-width: 750px) {
     padding-right: 0;
+    width: auto;
     .navLink {
       font-size: 1.3em;
       margin-left: 0.3em;

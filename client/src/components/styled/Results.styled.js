@@ -21,12 +21,13 @@ export const StyledResults = styled.div`
   }
 
   .session-form {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 35vw;
     margin-top: 1em;
     border-radius: 1em;
-    background-image: linear-gradient(to bottom right, #defce6, #b0cfb8);
+    background-image: linear-gradient(to bottom right, #defce6, #cef0c7);
     display: flex;
     align-items: center;
     text-align: center;
@@ -39,13 +40,14 @@ export const StyledResults = styled.div`
     }
   }
   .close-form {
-    margin-left: 14em;
-    border-radius: 0%;
+    position: absolute;
+    right: 1em;
+    top: 0.8em;
     border: none;
     color: rgba(0, 0, 0, 1);
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 600;
-    background: rgba(0, 0, 0, 0);
+    background: #adaaaa;
     box-shadow: none;
     cursor: pointer;
   }
@@ -65,7 +67,7 @@ export const StyledResults = styled.div`
   }
 
   .submission-form-title {
-    margin-top: 0px;
+    margin-top: 40px;
     height: 1em;
     font-size: 2.5em;
   }
@@ -99,11 +101,8 @@ export const StyledResults = styled.div`
     select {
       font-size: 18px;
     }
-    .close-form {
-      margin-left: 8em;
-    }
     table {
-      width: 96%;
+      width: 94%;
     }
     td,
     th {
@@ -115,6 +114,12 @@ export const StyledResults = styled.div`
       height: 2em;
       font-size: 1em;
       margin-bottom: 0;
+    }
+    .session-form {
+      width: 90vw;
+    }
+    .submission-form-title {
+      margin-top: 1.5em;
     }
   }
 `;

@@ -53,9 +53,9 @@ const CreateSession = ({
             setShowForm(false);
           }}
         >
-          X
+          Close
         </button>
-        <h3 className="submission-form-title">Add a session</h3>
+        <h3 className="submission-form-title">Enter a Session</h3>
         <input
           type="date"
           value={date}

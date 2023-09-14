@@ -18,22 +18,6 @@ export const CredentialsStyled = styled.div`
     background: rgba(0, 0, 0, 0);
     cursor: pointer;
   }
-  .welcome-message {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
-
-    h1 {
-      font-size: 35px;
-      padding-top: 25px;
-    }
-    h4 {
-      width: 88%;
-      padding-top: 25px;
-    }
-  }
 
   form {
     height: 82%;
@@ -119,5 +103,14 @@ export const WelcomeStyled = styled.div`
 
   .user-welcome {
     font-size: 28px;
+  }
+
+  h1 {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 3em;
+    @media (max-width: 765px) {
+      font-size: 1.3em;
+    }
   }
 `;

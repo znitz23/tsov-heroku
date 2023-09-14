@@ -23,7 +23,7 @@ const HomePage = ({
         <Container>
           {!showLogIn && !showRegister ? (
             <WelcomeStyled>
-              <h1>Welcome to 3 Streets of Value.</h1>
+              <h1 className="mobile-welcome">Welcome to 3 Streets of Value.</h1>
               <span>
                 Please
                 <button onClick={() => setShowLogIn(true)}>
